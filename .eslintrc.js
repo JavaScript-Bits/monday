@@ -26,17 +26,7 @@ module.exports = {
     },
 
     plugins: ["@typescript-eslint"],
-    extends: [
-        "next/core-web-vitals",
-        // "plugin:@typescript-eslint/recommended",
-        "airbnb",
-        "prettier",
-        // "plugin:jsx-a11y/recommended",
-        // "plugin:prettier/recommended",
-        // "plugin:sonarjs/recommended",
-        // "plugin:security/recommended",
-        // "plugin:react-hooks/recommended",
-    ],
+    extends: ["next/core-web-vitals", "airbnb", "prettier"],
 
     rules: {
         "@typescript-eslint/no-unused-vars": "error",
