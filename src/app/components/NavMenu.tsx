@@ -6,20 +6,20 @@ interface NavMenuProps {
   navItems: string[];
 }
 interface NavItemProps {
-    itemName: string;
-  }
+  itemName: string;
+}
 
-  // Use the interface with the component's function signature
-  const NavItem: React.FC<NavItemProps> = ({ itemName }) => {
-    // Implementation of NavItem...
-    return <li>{itemName}</li>;
-  };
+// Use the interface with the component's function signature
+const NavItem: React.FC<NavItemProps> = ({ itemName }) => {
+  // Implementation of NavItem...
+  return <li>{itemName}</li>;
+};
 
 
 // Use the interface with the component's function signature
 const NavMenu: React.FC<NavMenuProps> = ({ isNavOpen, navItems }) => {
   return (
-    <nav className={`${isNavOpen ? 'md:block' : 'hidden'} transition-transform duration-1000 ease-in-out transform ${isNavOpen ? "translate-x-0" : "-translate-x-full"}`}>
+    <nav className={`${isNavOpen ? 'md:inline-block' : 'hidden'} transition-transform duration-1000 ease-in-out transform ${isNavOpen ? "translate-x-0" : "translate-x-full"}`}>
       <ul className="flex flex-col gap-4 border md:border-none p-4 md:p-0 md:flex-row w-full items-center md:bg-none md:gap-6 text-lg">
         {navItems.map(item => (
           // Ensure NavItem also accepts a prop named itemName of type string

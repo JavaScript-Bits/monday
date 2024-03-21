@@ -8,9 +8,9 @@ import Image from 'next/image';
 
 const navItems = ["Home", "News", "Popular", "Trending", "Categories"];
 const articles = [
-    { title: "Decentralized Finance (DeFi)", content: "Transforming traditional finance by leveraging blockchain technology to facilitate open, accessible, and secure financial markets." },
-    { title: "Non-Fungible Tokens (NFTs)", content: "Revolutionizing digital ownership and creativity through unique, blockchain-based digital assets that represent art, collectibles, and more." },
-    { title: "Decentralized Autonomous Organizations (DAOs)", content: "Enabling a new form of organizational structure governed by smart contracts, allowing for community-driven decisions and operations." },
+    { title: "Hydrogen VS Electric Cars", content: "Will hydrogen-fueled cars ever catch up to EVs?" },
+    { title: "The Downsides of AI Artistry", content: "What are the possible adverse effects of on-demand AI image generation?" },
+    { title: "Is VC Funding Drying Up?", content: "Private funding by VC firms is down 50% YOY. We take a look at what that means." },
 ];
 const listItems = [
     {
@@ -40,17 +40,17 @@ export default function Home() {
     const [isNavOpen, setIsNavOpen] = useState(false);
 
     return (
-        <main className="flex flex-col items-center justify-between md:p-16 p-6 max-w-[1200px] m-auto min-h-screen">
+        <main className="flex flex-col items-center justify-between md:p-16 p-6 max-w-full m-auto min-h-screen">
 
             <header className="flex w-full justify-between">
                 <div>
-                    <ImageComponent src="/images/logo.svg" alt="" className="bg-white" width={40} height={40} />
+                    <ImageComponent src="/images/logo.svg" alt="logo" className="bg-white" width={40} height={40} />
                 </div>
                 <div>
                     <div className='md:hidden' onClick={() => setIsNavOpen(!isNavOpen)}>
-                        <ImageComponent src={isNavOpen ? "/images/icon-menu-close.svg" : "/images/icon-menu.svg"} alt="Menu Icon" className="bg-white absolute top-6 right-6 " width={30} height={30} />
+                        <ImageComponent src={isNavOpen ? "/images/icon-menu-close.svg" : "/images/icon-menu.svg"} alt="Menu Icon" className="bg-white sticky top-6 right-6 " width={30} height={30} />
                     </div>
-                    <div className='absolute md:static z-10'>
+                    <div className=' w-full '>
                         <NavMenu isNavOpen={isNavOpen} navItems={navItems} />
                     </div>
                 </div>
@@ -58,17 +58,17 @@ export default function Home() {
 
             <section className='flex flex-col md:flex-row justify-between py-10 gap-6 items-stretch'>
                 <div className='flex flex-col gap-4 md:flex-2 md:gap-8'>
-                    <ImageComponent src="/images/image-web-3-desktop.jpg" alt="Web 3.0 Overview" width={650} height={150} />
-                    <div className='flex gap-4 flex-col md:flex-row'>
-                        <h2 className='flex-1 text-5xl font-extrabold'>The Bright Future of Web 3.0?</h2>
+                    <ImageComponent src="/images/image-web-3-desktop.jpg" alt="Web 3.0 Overview" width={950} height={250} />
+                    <div className='flex gap-5 flex-col md:flex-row'>
+                        <h2 className='flex-1 text-7xl font-bold'>The Bright Future of Web 3.0?</h2>
                         <div className='flex flex-col gap-4 md:flex-1' >
-                            <p className='flex-1 text-gray-500 text-sm'>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people.
+                            <p className='flex-1 text-gray-500 text-lg leading-relaxed'>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people.
                                 But is it really fulfilling its promise?</p>
-                            <button className='p-2 bg-red-500 my-2 w-[50%] uppercase align-middle text-white tracking-wider'>Read More</button>
+                            <button className='p-2 bg-red-500 my-2 w-[50%] uppercase align-middle text-white tracking-widest'>Read More</button>
                         </div>
                     </div>
                 </div>
-                <aside className='md:flex-2 bg-slate-950 text-white  p-6'>
+                <aside className='md:flex-2 bg-slate-950 text-white p-6'>
                     <h2 className='text-3xl text-amber-300 font-bold'>New</h2>
                     <div className=''>
                         {articles.map((article, index) => (
