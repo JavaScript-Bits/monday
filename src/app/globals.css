@@ -26,6 +26,7 @@ body {
     rgb(var(--background-start-rgb)); */
   background-color: white;
   color: black;
+  box-sizing: border-box;
 
 }
 
